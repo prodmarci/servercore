@@ -1,0 +1,99 @@
+# ___  ____  _  _  ___  _____  ____  ____
+#/ __)(  _ \( \/ )/ __)(  _  )(  _ \( ___)
+#\__ \ )   / \  /( (__  )(_)(  )   / )__)
+#(___/(_)\_)  \/  \___)(_____)(_)\_)(____)
+#
+language: "En-us"
+#
+# IMPORTANT!
+# COLORED MESSAGES:
+# In terms of colors you can use both hex and normal minecraft codes.
+# Prefixes for colors:
+# - "&#<hex_code>"
+# - "&<minecraft_color>"
+#
+# Section: general-settings are just settings that set plugin display name and things like that.
+# - Example of the message sent to the console:
+# "(plugin-prefix): (message)"
+# - Example of the message sent to the player:
+# "(server-name) (plugin-suffix) (message)"
+#
+general-settings:
+  plugin-prefix: "SRVCORE"
+  server-name: "&aSRVCORE_"
+  plugin-suffix: "&7»"
+#
+# Section: modules-enabled are just settings that set plugin modules on/off.
+#
+# For further configuration look under modules-settings section.
+#
+modules-enabled:
+  basic-utils: true
+  custom-motd: true
+  custom-holo: true
+  custom-scoreboard: true
+  simple-spawn: true
+  welcome-message: true
+#
+# Section: modules-settings are just settings that set modules parameters.
+#
+modules-settings:
+  simple-spawn:
+    tp-on-join: false
+    # Type of displaying the message: message/actionbar
+    type: "message"
+    # How long player need to stand still before teleport
+    teleport-delay: 5
+    messages:
+      # Message sent when spawn is being set
+      # %coords% - coords of spawn
+      spawn-set: "&fSpawn &asuccesfully &fset at &a%coords%!"
+      # Message sent on countdown for teleporting to spawn
+      # %time_left% - time left to tp
+      teleport: "&fStand still. Teleporting in &a%time_left% &fseconds."
+      # Message sent when player canceled the teleport.
+      teleport-failed: "&fOops looks like you moved. &cTeleport canceled."
+      # Message sent when player got teleported.
+      teleport-success: "&fTeleported to &aspawn!"
+  custom-motd:
+    # Top line of MOTD in server list
+    first-line: "&a> SRVCORE_"
+    # Second line of MOTD in server list
+    second-line: "&fThe &abest &fserver managament plugin &aever&f!"
+    # Replaces server max slots with custom value
+    max-players: 2137
+  custom-scoreboard:
+    # Use %server_name% for server name!
+    display-name: "%server_name%"
+    # Max amount of text is 16 lines!
+    content:
+      - ""
+      - "&f» &a%player_name%"
+      - "&fRanga: &a%rank%"
+      - ""
+      - "&fOnline: &a%players%"
+      - ""
+      - "&aPlugin Showcase"
+  welcome-message:
+    # Type of displaying the message: title/actionbar
+    type: "title"
+    messages:
+      # Welcome message
+      message: "&fWelcome &a%player% &fto the server!"
+  basic-utils:
+    invincibility: false
+    disable-hunger: false
+    messages:
+      fly:
+        enabled: "Flight &aenabled"
+        disabled: "Flight &cdisabled!"
+      feed:
+        yourself: "You &afed &fyourself!"
+        someone: "You feed &a%player%!"
+      heal:
+        yourself: "You &ahealed &fyourself!"
+        someone: "You healed &a%player%!"
+      gamemode:
+        someone: "Gamemode %gamemode% was set for %player%."
+        yourself: "You set your gamemode to %gamemode%."
+        not-exist: "Entered gamemode does not exist!"

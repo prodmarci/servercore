@@ -1,0 +1,35 @@
+name: srvcore
+version: '${project.version}'
+main: dev.prodmarci.srvcore.main
+api-version: '1.20'
+commands:
+  gamemode:
+    description: "Change your gamemode!"
+    usage: "/gamemode <gamemode> [player]"
+    aliases: [ gm, ]
+    permission: srvcore.command.gamemode
+  fly:
+    description: "Makes you fly."
+    usage: "/fly"
+    permission: srvcore.command.fly
+  feed:
+    description: "Feed a player!"
+    usage: "/feed [player]"
+    permission: srvcore.command.feed
+  heal:
+    description: "Heals a player to max."
+    usage: "/heal [player]"
+    permission: srvcore.command.heal
+  spawn:
+    description: "Teleports player to spawn."
+    usage: "/spawn"
+    permission: srvcore.command.fly
+  setspawn:
+    description: "Sets spawn."
+    usage: "/setspawn"
+    permission: srvcore.command.setspawn
+  hologram:
+    description: "Allows to place holograms"
+    usage: "/hologram <line1|line2|...>"
+    aliases: [ holo, ]
+    permission: srvcore.command.hologram
